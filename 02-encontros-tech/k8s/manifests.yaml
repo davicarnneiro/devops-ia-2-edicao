@@ -13,15 +13,22 @@ spec:
     metadata:
       labels:
         app: encontros-tech
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
     spec:
       containers:
       - name: encontros-tech
-        image: fabricioveronez/bootcamp-encontros-tech:v1
+        image: davicarneiro/bootcamp-encontros-tech:v1
         ports:
         - containerPort: 8000
         env:
         - name: DATABASE_URL
-          value: "postgresql://doadmin:AVNS_CE9P-aoE7jr3lxNg8jn@private-db-postgresql-nyc1-21167-do-user-10478846-0.e.db.ondigitalocean.com:25060/defaultdb?sslmode=require"
+          valueFrom:
+            secretKeyRef:
+              name: encontros-tech-secrets
+              key: DATABASE_URL
         - name: APP_TITLE
           value: "Encontros Tech"
         - name: DEBUG

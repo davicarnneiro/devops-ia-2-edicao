@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Encontros Tech{% endblock %}</title>
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    
+
     {% block extra_head %}{% endblock %}
 </head>
 <body>
@@ -40,7 +40,7 @@
                     <small class="text-white" style="font-family: var(--font-family); font-weight: 500; font-size: 0.85rem;">Encontros Tech</small>
                 </div>
                 <div class="col-md-4 text-center">
-                    <small class="text-white" style="font-family: var(--font-family); font-weight: 500; font-size: 0.85rem;">Criado por Fabricio Veronez</small>
+                    <small class="text-white" style="font-family: var(--font-family); font-weight: 500; font-size: 0.85rem;">Criado por Davi Carneiro</small>
                 </div>
                 <div class="col-md-4 text-end">
                     <small class="text-white" style="font-family: var(--font-family); font-weight: 500; font-size: 0.85rem;">Servidor: {{ server_name }}</small>
@@ -53,7 +53,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    
+
     {% block extra_scripts %}{% endblock %}
 </body>
 </html>
